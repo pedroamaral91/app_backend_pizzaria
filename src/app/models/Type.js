@@ -5,6 +5,7 @@ class Type extends Model {
     super.init(
       {
         type: Sequelize.STRING,
+        description: Sequelize.STRING,
         product_id: {
           type: Sequelize.INTEGER,
           references: {

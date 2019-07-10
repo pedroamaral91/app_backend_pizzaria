@@ -1,6 +1,7 @@
 import * as Yup from 'yup';
 import Price from '../models/Price';
 import Size from '../models/Size';
+import Type from '../models/Type';
 
 class PriceController {
   async index(req, res) {
@@ -15,6 +16,10 @@ class PriceController {
         {
           model: Size,
           as: 'size',
+        },
+        {
+          model: Type,
+          as: 'type',
         },
       ],
     });

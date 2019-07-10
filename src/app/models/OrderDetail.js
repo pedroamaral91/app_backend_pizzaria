@@ -1,14 +1,20 @@
 import Sequelize, { Model } from 'sequelize';
 
-class Price extends Model {
+class OrderDetail extends Model {
   static init(sequelize) {
     super.init(
       {
-        price: Sequelize.DECIMAL(10, 2),
         type_id: {
           type: Sequelize.INTEGER,
           references: {
             model: 'Type',
+            key: 'id',
+          },
+        },
+        order_id: {
+          type: Sequelize.INTEGER,
+          references: {
+            model: 'Order',
             key: 'id',
           },
         },
@@ -28,10 +34,7 @@ class Price extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.Type, { foreignKey: 'type_id', as: 'type' });
-
-    this.belongsTo(models.Size, { foreignKey: 'size_id', as: 'size' });
+    this.belongsTo(models.Order, { foreignKey: 'order_id' });
   }
 }
-
-export default Price;
+export default OrderDetail;

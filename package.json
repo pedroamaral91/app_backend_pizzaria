@@ -9,7 +9,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cep-promise": "^3.0.7",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^1.6.5",
     "nodemon": "^1.19.1",
